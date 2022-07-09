@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DistressApp">
         <activity
+            android:name=".contacts.NewContact"
+            android:exported="false" />
+        <activity
+            android:name=".contacts.EditContact"
+            android:exported="false" />
+        <activity
+            android:name=".contacts.UserContacts"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
+        <activity
             android:name=".LaunchActivity"
             android:exported="true">
             <intent-filter>
@@ -20,21 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".NewContact"
-            android:exported="false" />
-        <activity
-            android:name=".UserContacts"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

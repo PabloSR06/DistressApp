@@ -1,12 +1,22 @@
-package com.pablosr.distressapp;
+package com.pablosr.distressapp.contacts;
 
+import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import com.pablosr.distressapp.LaunchActivity;
+import com.pablosr.distressapp.MainActivity;
+import com.pablosr.distressapp.R;
+
+import org.w3c.dom.Text;
 
 public class NewContact extends AppCompatActivity {
 
@@ -17,17 +27,22 @@ public class NewContact extends AppCompatActivity {
 
 
         Button saveContact = findViewById(R.id.saveContact);
+        EditText newName = (EditText) findViewById(R.id.newName);
+        EditText newPhone = (EditText) findViewById(R.id.newPhone);
+
         saveContact.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ContentValues row = new ContentValues();
-                row.put("name", "Nuevo");
-                row.put("phoneNumber","33333333");
+                row.put("name", newName.getText().toString());
+                row.put("phoneNumber", newPhone.getText().toString());
                 LaunchActivity.getDatabase().insert("contacts", null, row);
 
                 Toast.makeText(getApplicationContext(), R.string.contact_saved, Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(getApplicationContext(),UserContacts.class));
+                startActivity(new Intent(getApplicationContext(), UserContacts.class));
             }
         });
     }
+
+
 }
