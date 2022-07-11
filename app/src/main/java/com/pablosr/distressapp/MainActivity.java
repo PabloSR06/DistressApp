@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.pablosr.distressapp.contacts.UserContacts;
@@ -28,18 +29,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = findViewById(R.id.button);
-        Button sendMessage = findViewById(R.id.sendMessage);
+        ImageView settings = findViewById(R.id.button);
+        ImageView sendMessage = findViewById(R.id.sendMessage);
 
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
+
 
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) { ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.SEND_SMS,}, 1000);
             Toast.makeText(getApplicationContext(), "aaa.", Toast.LENGTH_LONG).show();
 
         }else{
-            button.setOnClickListener(new View.OnClickListener() {
+            settings.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, UserContacts.class);
 
@@ -49,17 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
             sendMessage.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    ArrayList<Contact> contacts = LaunchActivity.getInstance().getContacts();
-                    for (Contact x: contacts) {
-                        try {
-                            SmsManager sms = SmsManager.getDefault();
-                            sms.sendTextMessage(x.getPhoneNumber(), null, "hola", null, null);
-                            Toast.makeText(getApplicationContext(), "Mensaje Enviado.", Toast.LENGTH_LONG).show();
-                        } catch (Exception e) {
-                            Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos.", Toast.LENGTH_LONG).show();
-                            e.printStackTrace();
-                        }
-                    }
+                    Toast.makeText(getApplicationContext(), "aaa", Toast.LENGTH_SHORT).show();
+//                    ArrayList<Contact> contacts = LaunchActivity.getInstance().getContacts();
+//                    for (Contact x: contacts) {
+//                        try {
+//                            SmsManager sms = SmsManager.getDefault();
+//                            sms.sendTextMessage(x.getPhoneNumber(), null, "hola", null, null);
+//                            Toast.makeText(getApplicationContext(), "Mensaje Enviado.", Toast.LENGTH_LONG).show();
+//                        } catch (Exception e) {
+//                            Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos.", Toast.LENGTH_LONG).show();
+//                            e.printStackTrace();
+//                        }
+//                    }
                 }
             });
         }

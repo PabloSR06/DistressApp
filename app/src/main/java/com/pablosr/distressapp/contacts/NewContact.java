@@ -39,7 +39,8 @@ public class NewContact extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), R.string.contact_saved, Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(getApplicationContext(), UserContacts.class));
+                UserContacts.getInstance().reloadAllData();
+                finish();
             }
         });
     }

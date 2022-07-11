@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewContact"
+    tools:context=".contacts.NewContact"
     android:layout_margin="5dp">
 
     <LinearLayout
@@ -33,7 +33,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="@string/name"
+                android:hint="@string/name"
                 android:importantForAutofill="no" />
 
 
@@ -58,10 +58,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/phone_number"
+                android:importantForAutofill="no"
                 android:inputType="phone"
-                android:minHeight="48dp"
-                android:text="@string/phone_number"
-                android:importantForAutofill="no" />
+                android:minHeight="48dp" />
 
 
         </LinearLayout>

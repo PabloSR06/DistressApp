@@ -5,4 +5,6 @@
     <string name="phone_number">Phone Number</string>
     <string name="favourite_contacts">Favourite Contacts</string>
     <string name="contact_saved">Contact Saved</string>
+    <string name="settings">Settings</string>
+    <string name="send_message">Send Message</string>
 </resources>

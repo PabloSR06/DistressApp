@@ -15,8 +15,11 @@ import java.util.ArrayList;
 
 public class ContactsViewAdapter extends ArrayAdapter<Contact> {
 
+    private ArrayList<Contact> arrayList;
+
     public ContactsViewAdapter(@NonNull Context context, ArrayList<Contact> arrayList) {
         super(context, 0, arrayList);
+        this.arrayList = arrayList;
     }
 
     @NonNull
@@ -42,5 +45,9 @@ public class ContactsViewAdapter extends ArrayAdapter<Contact> {
 
 
         return currentItemView;
+    }
+
+    public ArrayList<Contact> getData() {
+        return arrayList;
     }
 }
