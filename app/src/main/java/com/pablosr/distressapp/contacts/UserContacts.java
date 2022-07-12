@@ -1,12 +1,13 @@
 package com.pablosr.distressapp.contacts;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.pablosr.distressapp.LaunchActivity;
 import com.pablosr.distressapp.MainActivity;
